@@ -35,9 +35,9 @@ class TestOrderFeedPage:
         feed = OrderFeedPage(driver)
         main = MainPage(driver)
         main.click_feed_button()
-        current_counter = int(feed.check_orders_counter(OrderFeedLocators.COUNTER_ORDERS_ALL_TIME))
+        current_counter = int(feed.check_orders_counter_all_time())
         order.create_order(create_user)
-        updated_counter = int(feed.check_orders_counter(OrderFeedLocators.COUNTER_ORDERS_ALL_TIME))
+        updated_counter = int(feed.check_orders_counter_all_time())
         assert updated_counter > current_counter
 
     @allure.title("Счетчик Выполнено за сегодня")
@@ -47,9 +47,9 @@ class TestOrderFeedPage:
         feed = OrderFeedPage(driver)
         main = MainPage(driver)
         main.click_feed_button()
-        current_counter = int(feed.check_orders_counter(OrderFeedLocators.COUNTER_ORDERS_TODAY))
+        current_counter = int(feed.check_orders_counter_today())
         order.create_order(create_user)
-        updated_counter = int(feed.check_orders_counter(OrderFeedLocators.COUNTER_ORDERS_TODAY))
+        updated_counter = int(feed.check_orders_counter_today())
         assert updated_counter > current_counter
 
     @allure.title("Заказ пользователя в работе")

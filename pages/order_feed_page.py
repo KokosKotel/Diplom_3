@@ -13,9 +13,13 @@ class OrderFeedPage(BasePage):
     def check_order_info(self):
         return self.check_element(OrderFeedLocators.INFO_ORDER)
 
-    @allure.step("Получить количество заказов")
-    def check_orders_counter(self, locator):
-        return self.get_text_locator(locator)
+    @allure.step("Получить количество заказов Выполнено за все время")
+    def check_orders_counter_all_time(self):
+        return self.get_text_locator(OrderFeedLocators.COUNTER_ORDERS_ALL_TIME)
+
+    @allure.step("Получить количество заказов Выполнено за сегодня")
+    def check_orders_counter_today(self):
+        return self.get_text_locator(OrderFeedLocators.COUNTER_ORDERS_TODAY)
 
     @allure.step("получаем номер заказа")
     def get_history_orders(self):

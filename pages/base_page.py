@@ -32,8 +32,8 @@ class BasePage:
         return self.driver.find_elements(*locator)
 
     def get_text_locator(self, locator):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        return self.driver.find_element(*locator).text
+        element = self.wait_element(locator)
+        return element.text
 
     def drag_drop(self, element_first, element_second):
         ingredient = self.check_element(element_first)

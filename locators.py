@@ -29,7 +29,7 @@ class LoginPageLocators:
     RECOVER_BUTTON = (By.XPATH, "//a[text() = 'Восстановить пароль']")
 
 
-class RecoverAndResetPageLocators:
+class ForgotPasswordPageLocators:
     FIELD_EMAIL = (By.XPATH, ".//input[@name = 'name']")
     BUTTON_RECOVER = (By.XPATH, "//button[text() = 'Восстановить']")
     BUTTON_LOGIN = (By.XPATH, ".//a[text() = 'Войти']")
